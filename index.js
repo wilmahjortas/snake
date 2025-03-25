@@ -17,7 +17,7 @@ let speed = 5;
 
 let headX = 9;
 let headY = 9;
-const snakeParts = [];// [{x: headX, y: (headY + 1)}, {x: headX, y: headY + 2}];
+const snakeParts = [];
 let tailLength = 2;
 
 let appleX = getNewAppleLocation(-1);
@@ -47,13 +47,6 @@ function drawGame() {
     drawApple();
     drawSnake();
     drawScore();
-
-    // if (score > 5 && score <=10 ) {
-    //     speed = 7;
-    // }
-    // if (score > 10) {
-    //     // speed = 11;
-    // }
 
     timerID = setTimeout(drawGame, 1000 / speed);
 }
@@ -126,7 +119,6 @@ function checkAppleCollision() {
             if (1000/speed <= 5) {
                 speed--;
             }
-            // console.log(speed);
         }
     }
 }
@@ -134,52 +126,13 @@ function checkAppleCollision() {
 document.body.addEventListener('keydown', keyDown);
 
 function keyDown(event) {
-    /*
-    TO USE LEFT-RIGHT KEYS ONLY
-    when left key is pressed
-    if y velocity = 1 (up), then go left
-    if y velocity = -1 (down), then go right
-    if x velocity = 1 (right), then go up
-    if x velocity = -1 (left), then go down
-
-    when right key is pressed
-    if y velocity = 1 (up), then go right
-    if y velocity = -1 (down), then go left
-    if x velocity = 1 (right), then go down
-    if x velocity = -1 (left), then go up
-    */
-
-    //up
-    // if (event.keyCode == 38) {
-    //     if (yVelocity == 1)
-    //         return;
-    //     yVelocity = -1;
-    //     xVelocity = 0;
-    // }
-
-    //down
-    // if (event.keyCode == 40) {
-    //     if (yVelocity == -1)
-    //         return;
-    //     yVelocity = 1;
-    //     xVelocity = 0;
-    // }
-
     //left
     if (event.keyCode == 37) {
-        // if (xVelocity == 1)
-        //     return;
-        // yVelocity = 0;
-        // xVelocity = -1;
         turnLeft();
     }
 
     //right
     if (event.keyCode == 39) {
-        // if (xVelocity == -1)
-        //     return;
-        // yVelocity = 0;
-        // xVelocity = 1;
         turnRight();
     }
 }
@@ -192,7 +145,6 @@ function drawGameOver() {
     gradient.addColorStop("0", "magenta");
     gradient.addColorStop("0.5", "blue");
     gradient.addColorStop("1.0", "red");
-    // Fill with gradient
     ctx.fillStyle = gradient;
 
     ctx.fillText("Game Over!", canvas.width / 2, canvas.height / 2);
