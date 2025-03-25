@@ -18,6 +18,10 @@
         font-family: sans-serif;
         flex-flow: column nowrap;
       }
+
+      h2 {
+        text-align: center;
+      }
       .main {
         flex: 1 1 auto;
         display: flex;
@@ -25,6 +29,10 @@
         justify-content: space-between;
         align-items: center;
         max-height: 95%;
+      }
+
+      #number {
+        margin-top: 0px;
       }
       canvas {
         border-radius: 5px;
@@ -73,7 +81,8 @@
   <body>
     <div class="main">
       <h1>Loading...</h1>
-      <h2>Play snake in the meantime!</h2>
+      <h2>You're in in line, your <br />position number is currently</h2>
+      <h1 id="number">11</h1>
       <canvas id="game" width="320" height="320"></canvas>
       <button id="play" onclick="onPlayBtnClick()" tabindex="1">
         Play Again
