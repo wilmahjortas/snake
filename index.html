@@ -10,12 +10,12 @@
     <style>
       html,
       body {
-        margin-top: 20px;
         padding: 0;
         height: 100%;
       }
       body {
         display: flex;
+        font-family: sans-serif;
         flex-flow: column nowrap;
       }
       .main {
@@ -27,7 +27,6 @@
         max-height: 95%;
       }
       canvas {
-        margin-top: 40px;
         border-radius: 5px;
         box-shadow: black 10px 0 20px;
       }
@@ -73,6 +72,7 @@
   <body>
     <div class="main">
       <h1>Loading...</h1>
+      <h2>Play snake in the meantime!</h2>
       <canvas id="game" width="320" height="320"></canvas>
       <button id="play" onclick="onPlayBtnClick()" tabindex="1">
         Play Again
